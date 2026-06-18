@@ -1,0 +1,40 @@
+Web VPython 3.2
+
+from vpython import *
+
+scene = canvas(title="Projectile Motion")
+
+# 地面
+ground = box(
+    pos=vector(0,0,0),
+    size=vector(20,0.2,10),
+    color=color.green
+)
+
+#
+ground2 = box(
+    pos=vector(0,0,0),
+    size=vector(0.2,15,10),
+    color=color.green
+)
+
+ball = sphere(pos=vector(0,0,0), radius=0.5)
+a= box(
+    pos=vector(0,0,0),
+    size=vector(20,0.2,10),
+    color=color.green
+)
+
+
+g = vector(0,-9.8,0)
+v = vector(0,0,0)
+dt = 0.01
+
+while True:
+    rate(100)
+    v=v+g*dt
+    ball.pos = (ball.pos + v*dt)
+        
+        
+        
+        
